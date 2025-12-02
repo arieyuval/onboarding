@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep Dark Mode - Premium SaaS Aesthetic */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+
+    /* Glassmorphic Cards */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Vibrant Cyan Accent */
+    --primary: 190 100% 50%;
+    --primary-foreground: 0 0% 2%;
+
+    /* Subtle Secondary */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted Elements */
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Accent Glow */
+    --accent: 190 100% 50%;
+    --accent-foreground: 0 0% 2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Glassmorphic Borders */
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Glow Effects */
+    --glow-primary: 190 100% 50%;
+    --glow-intensity: 0.6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Scrollbar Styling */
+@layer utilities {
+  .scrollbar-visible::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 6px;
+    margin: 4px 0;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 6px;
+    border: 2px solid hsl(var(--muted) / 0.3);
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  
+  /* Firefox scrollbar */
+  .scrollbar-visible {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) hsl(var(--muted) / 0.3);
+  }
+}
